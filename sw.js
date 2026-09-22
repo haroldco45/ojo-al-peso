@@ -1,6 +1,6 @@
 // Ojo al peso - service worker (Vibras Positivas HM)
-const CACHE = 'ojo-al-peso-v1-2026-09-22';
-const ASSETS = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png'];
+const CACHE = 'ojo-al-peso-v2-2026-09-22';
+const ASSETS = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
