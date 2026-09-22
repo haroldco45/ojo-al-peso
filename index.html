@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ojo al peso: la JEP en cifras</title>
+<meta name="description" content="Cuánto cuesta la JEP, qué entrega y cuánto te toca a ti. Cifras con fuente para el contribuyente.">
+<meta name="theme-color" content="#16213E">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ojo al peso: la JEP en cifras">
+<meta property="og:description" content="Cuánto cuesta la JEP, qué entrega y cuánto te toca a ti. Con fuentes.">
+<meta property="og:url" content="https://haroldco45.github.io/ojo-al-peso/">
+<meta property="og:image" content="https://haroldco45.github.io/ojo-al-peso/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F3F5F2; --ink:#16213E; --soft:#4A5572; --line:#C9CFD6;
+  --receipt:#FFFFFF; --mark:#FFD23F; --stamp:#C8102E; --ok:#1E7A4F;
+  --card:#FFFFFF;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"Courier Prime","Courier New",ui-monospace,monospace;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F1626; --ink:#E9EDF5; --soft:#A7B0C4; --line:#2B3650;
+    --receipt:#F7F7F2; --card:#172036; --mark:#FFD23F; --stamp:#FF4D5E; --ok:#4CC38A;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F1626; --ink:#E9EDF5; --soft:#A7B0C4; --line:#2B3650;
+  --receipt:#F7F7F2; --card:#172036; --mark:#FFD23F; --stamp:#FF4D5E; --ok:#4CC38A;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mark);outline-offset:2px;border-radius:4px}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+
+/* Hero */
+header.hero{padding:36px 0 28px}
+.brand{font-size:14px;color:var(--soft);margin:0 0 18px}
+h1{font-stretch:68%;font-weight:900;font-size:clamp(46px,13vw,88px);line-height:.92;letter-spacing:-.01em;margin:0 0 14px}
+.lede{font-size:18px;color:var(--soft);max-width:34ch;margin:0 0 28px}
+
+/* Receipt */
+.receipt{position:relative;background:var(--receipt);color:#1b1b1b;font-family:var(--mono);font-size:15px;
+  padding:22px 20px 30px;max-width:380px;box-shadow:0 1px 0 #0001,0 14px 30px -18px #0006;
+  --z:10px;
+  -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - var(--z)) no-repeat,
+    conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/calc(2*var(--z)) var(--z) repeat-x;
+          mask:linear-gradient(#000 0 0) top/100% calc(100% - var(--z)) no-repeat,
+    conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/calc(2*var(--z)) var(--z) repeat-x;}
+.receipt .t{text-align:center;font-weight:700;margin:0 0 2px}
+.receipt .s{text-align:center;margin:0 0 12px;font-size:13px}
+.row{display:flex;justify-content:space-between;gap:12px;padding:3px 0}
+.row span:last-child{text-align:right;white-space:nowrap}
+.dash{border:0;border-top:1px dashed #1b1b1b;margin:10px 0}
+.total{font-weight:700;font-size:19px}
+.stepper{display:flex;align-items:center;gap:8px}
+.stepper button{font-family:var(--mono);font-size:18px;width:32px;height:32px;border:1px solid #1b1b1b;background:#fff;color:#1b1b1b;border-radius:4px;cursor:pointer}
+.stamp{position:absolute;right:14px;top:92px;transform:rotate(-14deg);border:3px solid var(--stamp);color:var(--stamp);
+  font-family:var(--sans);font-stretch:75%;font-weight:900;font-size:26px;padding:2px 10px;border-radius:6px;opacity:0;letter-spacing:.04em;pointer-events:none}
+.stamp.in{animation:stamp .45s cubic-bezier(.2,1.6,.4,1) .5s forwards}
+@keyframes stamp{from{opacity:0;transform:rotate(-14deg) scale(2.2)}to{opacity:.88;transform:rotate(-14deg) scale(1)}}
+@media (prefers-reduced-motion:reduce){.stamp.in{animation:none;opacity:.88}}
+.fine{font-size:12px;margin-top:12px;line-height:1.35}
+
+/* Sections */
+section{padding:34px 0;border-top:1px solid var(--line)}
+h2{font-stretch:75%;font-weight:850;font-size:clamp(30px,7vw,42px);line-height:1;margin:0 0 10px}
+.sub{color:var(--soft);margin:0 0 20px;max-width:60ch}
+mark{background:var(--mark);color:#16213E;padding:0 .15em}
+
+/* Calculator */
+.choice{margin:0 0 18px;border:0;padding:0}
+.choice legend{font-weight:700;margin-bottom:8px}
+.opts{display:grid;gap:8px}
+.opt{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer}
+.opt input{margin-top:5px;accent-color:var(--ink)}
+.opt b{display:block}
+.opt small{color:var(--soft);display:block;font-size:14px;line-height:1.35}
+.opt:has(input:checked){border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.result{background:var(--ink);color:var(--paper);border-radius:12px;padding:20px}
+.result .big{font-stretch:70%;font-weight:900;font-size:clamp(40px,11vw,64px);line-height:1;margin:4px 0 8px;word-break:break-word}
+.result p{margin:0}
+.result .eq{margin-top:10px;font-size:15px;opacity:.85}
+
+/* Chart */
+.chart{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;overflow-x:auto}
+.bar{display:grid;grid-template-columns:62px 1fr;gap:10px;align-items:center;margin:8px 0}
+.bar .y{font-weight:700;font-variant-numeric:tabular-nums}
+.bar .track{position:relative;height:30px}
+.bar .fill{height:100%;background:var(--ink);border-radius:0 5px 5px 0;min-width:2px}
+.bar .fill.req{background:repeating-linear-gradient(135deg,var(--stamp) 0 6px,transparent 6px 11px);border:2px solid var(--stamp)}
+.bar .fill.proj{background:var(--soft)}
+.bar .v{position:absolute;left:8px;top:50%;transform:translateY(-50%);font-size:13px;font-weight:700;color:#fff;white-space:nowrap;font-variant-numeric:tabular-nums}
+.bar .v.out{color:var(--ink)}
+.note{font-size:14px;color:var(--soft);margin-top:12px}
+
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.stat{background:var(--card);padding:16px}
+.stat .n{font-stretch:72%;font-weight:900;font-size:36px;line-height:1;font-variant-numeric:tabular-nums}
+.stat .l{font-size:14px;color:var(--soft);margin-top:6px;line-height:1.35}
+
+/* Debate */
+.debate{list-style:none;margin:0;padding:0}
+.debate li{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.debate time{font-variant-numeric:tabular-nums;color:var(--soft);font-size:14px;padding-top:2px}
+.who{font-weight:800}
+.who.jep{color:var(--soft)}
+.debate q{display:block;margin-top:2px}
+
+/* Two sides */
+.sides{display:grid;gap:12px}
+@media (min-width:640px){.sides{grid-template-columns:1fr 1fr}}
+.side{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.side h3{margin:0 0 8px;font-size:18px}
+.side ul{margin:0;padding-left:18px}
+.side li{margin:6px 0}
+
+/* Action */
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.btn{font-family:var(--sans);font-weight:800;font-size:16px;border-radius:999px;padding:12px 18px;border:2px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn.alt{background:transparent;color:var(--ink)}
+.btn.wa{background:#1FA855;border-color:#1FA855;color:#fff}
+textarea{width:100%;min-height:260px;font-family:var(--mono);font-size:14px;line-height:1.45;padding:14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);resize:vertical}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--paper);padding:10px 18px;border-radius:999px;font-weight:700;opacity:0;transition:.25s;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* Sources */
+.src{font-size:15px;padding-left:20px}
+.src li{margin:6px 0}
+footer{padding:28px 0 40px;border-top:1px solid var(--line);color:var(--soft);font-size:14px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header class="hero">
+  <p class="brand">Vibras Positivas HM, veeduría ciudadana</p>
+  <h1>Ojo al peso</h1>
+  <p class="lede">Cuánto cuesta la JEP, qué ha entregado y cuánto te toca a ti. Con fuente en cada cifra, para que saques tus propias cuentas.</p>
+
+  <div class="receipt" aria-label="Recibo de tu parte del presupuesto de la JEP 2026">
+    <p class="t">RECIBO DEL CONTRIBUYENTE</p>
+    <p class="s">Jurisdicción Especial para la Paz, vigencia 2026</p>
+    <div class="row"><span>Presupuesto 2026</span><span>$744.659 M</span></div>
+    <div class="row"><span>Habitantes (DANE)</span><span>53.399.171</span></div>
+    <hr class="dash">
+    <div class="row"><span>Por cada persona</span><span id="perCap">$0</span></div>
+    <div class="row"><span>Por cada adulto</span><span id="perAdult">$0</span></div>
+    <hr class="dash">
+    <div class="row" style="align-items:center">
+      <span>Personas en tu hogar</span>
+      <span class="stepper">
+        <button type="button" id="minus" aria-label="Quitar una persona">−</button>
+        <output id="hh" aria-live="polite">4</output>
+        <button type="button" id="plus" aria-label="Agregar una persona">+</button>
+      </span>
+    </div>
+    <div class="row total"><span>Tu hogar pone</span><span id="hhTotal">$0</span></div>
+    <p class="fine">Reparto igualitario del presupuesto entre toda la población. Lo que paga cada quien en impuestos varía, así que tómalo como referencia.</p>
+    <div class="stamp" id="stamp">PAGADO</div>
+  </div>
+</header>
+
+<section id="calc" aria-labelledby="h-calc">
+  <h2 id="h-calc">¿Cuánto cuesta cada decisión?</h2>
+  <p class="sub">En el debate del 9 de septiembre, el representante David Cote dividió el presupuesto entre las decisiones de la JEP y le dio <mark>$1.400 millones por sentencia</mark>. Aquí puedes hacer la cuenta con cada cifra que se ha puesto sobre la mesa.</p>
+
+  <fieldset class="choice">
+    <legend>1. Plata recibida desde 2018</legend>
+    <div class="opts" id="money">
+      <label class="opt"><input type="radio" name="m" value="3000000" checked><span><b>Más de $3 billones</b><small>Cifra del presidente De la Espriella</small></span></label>
+      <label class="opt"><input type="radio" name="m" value="4350000"><span><b>$4,2 a $4,5 billones</b><small>Estimado de analistas críticos (se usa el punto medio)</small></span></label>
+      <label class="opt"><input type="radio" name="m" value="5000000"><span><b>$5 billones</b><small>Cifra del representante Cote en el debate</small></span></label>
+    </div>
+  </fieldset>
+
+  <fieldset class="choice">
+    <legend>2. Qué se cuenta como resultado</legend>
+    <div class="opts" id="out">
+      <label class="opt"><input type="radio" name="o" value="3618" checked><span><b>3.618 decisiones</b><small>Lo que reporta la JEP: incluye tutelas, amnistías y renuncias a la acción penal</small></span></label>
+      <label class="opt"><input type="radio" name="o" value="1767"><span><b>1.767 decisiones sin tutelas</b><small>Quitando las 1.851 tutelas que señaló Cote</small></span></label>
+      <label class="opt"><input type="radio" name="o" value="4"><span><b>4 sentencias</b><small>Condenas proferidas hasta hoy, según El Tiempo</small></span></label>
+      <label class="opt"><input type="radio" name="o" value="7"><span><b>7 sentencias</b><small>Las que la JEP espera tener a fin de 2026</small></span></label>
+    </div>
+  </fieldset>
+
+  <div class="result" aria-live="polite">
+    <p>Cada una sale en promedio a</p>
+    <p class="big" id="res">$0</p>
+    <p id="resTxt"></p>
+    <p class="eq" id="resEq"></p>
+  </div>
+</section>
+
+<section id="plata" aria-labelledby="h-plata">
+  <h2 id="h-plata">La plata, año por año</h2>
+  <p class="sub">Presupuesto asignado a la JEP, en millones de pesos. Para 2027 la JEP pidió más de lo que trae el proyecto del Gobierno.</p>
+  <div class="chart" id="chart" role="img" aria-label="Gráfica del presupuesto de la JEP de 2022 a 2027"></div>
+  <p class="note">2018 a 2021 no aparecen porque no encontramos cifras oficiales confirmadas para esos años. Para 2025 hay dos cifras: $777.069 M según la Presidencia y $737.232 M según El Tiempo; se muestra la primera.</p>
+</section>
+
+<section id="resultados" aria-labelledby="h-res">
+  <h2 id="h-res">Lo que muestra la JEP</h2>
+  <p class="sub">Cifras de su balance de ocho años, publicadas por El Tiempo.</p>
+  <div class="stats">
+    <div class="stat"><div class="n">4</div><div class="l">sentencias en ocho años</div></div>
+    <div class="stat"><div class="n">1.851</div><div class="l">de las 3.618 decisiones son tutelas (51%)</div></div>
+    <div class="stat"><div class="n">1.035</div><div class="l">renuncias a la persecución penal, 978 a miembros de la Fuerza Pública</div></div>
+    <div class="stat"><div class="n">65,5</div><div class="l">meses en promedio entre abrir un caso y la primera imputación</div></div>
+    <div class="stat"><div class="n">308</div><div class="l">cuerpos de personas desaparecidas identificados</div></div>
+    <div class="stat"><div class="n">$404.477 M</div><div class="l">nómina estimada para 2026, según la Presidencia</div></div>
+  </div>
+</section>
+
+<section id="debate" aria-labelledby="h-deb">
+  <h2 id="h-deb">El debate en la Cámara</h2>
+  <p class="sub">Comisión Primera, 9 de septiembre de 2026, discusión del presupuesto 2027. Transcrito del video que circula en redes.</p>
+  <ol class="debate">
+    <li><time>0:00</time><div><span class="who">David Cote</span><q>Las 3.600 sentencias que lleva la JEP, con un presupuesto de más o menos $5 billones, nos están costando cada una $1.400 millones de pesos.</q></div></li>
+    <li><time>0:17</time><div><span class="who jep">Alejandro Ramelli, presidente de la JEP</span><q>Quisiera hacer algunas precisiones: son 3.600 decisiones con efectos de sentencia.</q></div></li>
+    <li><time>0:25</time><div><span class="who">David Cote</span><q>1.851 fueron de tutela, que no tienen la misma dimensión de la sentencia de un macrocaso. La mitad de las sentencias de las que usted habla son tutelas.</q></div></li>
+    <li><time>0:50</time><div><span class="who">David Cote</span><q>Si no los evaluamos como una alta corte sino como una jurisdicción, el promedio de sentencias se le cae mucho más.</q></div></li>
+    <li><time>1:08</time><div><span class="who">David Cote</span><q>Flaco favor le hace a la JEP que la esposa de un candidato presidencial saliera en campaña y, terminada la campaña, volviera a la jurisdicción.</q></div></li>
+    <li><time>1:29</time><div><span class="who">David Cote</span><q>Ustedes son autónomos y todo el mundo tiene derecho a trabajar, pero es un mensaje bastante negativo. Y quiero decirlo en el marco de la discusión del presupuesto.</q></div></li>
+  </ol>
+  <p class="note">Según la Cámara, la funcionaria es Pilar Rueda, esposa del candidato Iván Cepeda.</p>
+</section>
+
+<section id="lados" aria-labelledby="h-lados">
+  <h2 id="h-lados">Los dos lados</h2>
+  <p class="sub">Para que nadie diga que te dieron la mitad de la historia.</p>
+  <div class="sides">
+    <div class="side">
+      <h3>Lo que cuestionan</h3>
+      <ul>
+        <li>Pocas condenas para lo que ha costado.</li>
+        <li>Más de la mitad de las "decisiones" son tutelas.</li>
+        <li>Pidió $947.642 M para 2027, un 27% más que en 2026.</li>
+        <li>Planta y nómina que han crecido año tras año.</li>
+        <li>Salidas y regresos de funcionarios ligados a campañas.</li>
+      </ul>
+    </div>
+    <div class="side">
+      <h3>Lo que responde la JEP</h3>
+      <ul>
+        <li>No se le puede medir solo por sentencias: hay macroimputaciones, amnistías y verdad para víctimas.</li>
+        <li>El presupuesto cubre tres entidades: magistratura, secretaría y Unidad de Investigación y Acusación.</li>
+        <li>Ejecutó el 99,3% de lo asignado en 2025.</li>
+        <li>Considera el recorte una "asfixia económica" y lo llevó a instancias internacionales.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="accion" aria-labelledby="h-acc">
+  <h2 id="h-acc">Pide cuentas tú mismo</h2>
+  <p class="sub">Cualquier ciudadano puede exigir información con un derecho de petición (artículo 23 de la Constitución). La entidad debe responder en 15 días hábiles. Llena tus datos, copia el texto y envíalo a la JEP.</p>
+  <label for="pet" class="note" style="display:block;margin:0 0 6px">Texto del derecho de petición</label>
+  <textarea id="pet" spellcheck="true"></textarea>
+  <div class="btns">
+    <button class="btn" type="button" id="copyPet">Copiar petición</button>
+    <a class="btn wa" id="waBtn" target="_blank" rel="noopener">Compartir por WhatsApp</a>
+    <button class="btn alt" type="button" id="copyLink">Copiar enlace</button>
+  </div>
+</section>
+
+<section id="fuentes" aria-labelledby="h-src">
+  <h2 id="h-src">Fuentes</h2>
+  <ol class="src">
+    <li><a href="https://www.camara.gov.co/la-jep-pide-mas-plata-pero-infla-sus-resultados-con-tutelas-david-cote" target="_blank" rel="noopener">Cámara de Representantes: intervención de David Cote (11 sep 2026)</a></li>
+    <li><a href="https://www.eltiempo.com/justicia/jep-colombia/el-balance-de-ocho-anos-de-la-jurisdiccion-especial-para-la-paz-jep-en-medio-del-debate-por-su-presupuesto-3587741" target="_blank" rel="noopener">El Tiempo: balance de ocho años de la JEP</a></li>
+    <li><a href="https://www.eltiempo.com/justicia/jep-colombia/el-presupuesto-de-la-jep-aumentaria-un-10-para-2026-en-medio-del-cambio-de-gobierno-3581857" target="_blank" rel="noopener">El Tiempo: presupuesto 2022 a 2025</a></li>
+    <li><a href="https://cambiocolombia.com/pais/articulo/2026/9/no-es-asfixia-ni-venganza-de-la-espriella-al-presidente-de-la-jep-por-recorte-presupuestal" target="_blank" rel="noopener">Cambio: cifras de la Presidencia 2025 a 2027</a></li>
+    <li><a href="https://www.minuto60.com/politica/espriella-jep-hoy-que-dijo-presupuesto-2027/15677" target="_blank" rel="noopener">Minuto60: nómina 2026</a></li>
+    <li><a href="https://www.bluradio.com/nacion/alejandro-ramelli-entre-recortar-el-presupuesto-y-cerrarla-no-es-que-exista-mucha-diferencia-so35" target="_blank" rel="noopener">Blu Radio: respuesta de Ramelli, 3.618 decisiones</a></li>
+    <li><a href="https://www.infobae.com/colombia/2026/09/09/el-tema-del-presupuesto-es-dramatico-el-presidente-de-la-jep-hizo-advertencias-ante-eventual-reduccion-de-recursos-para-2027/" target="_blank" rel="noopener">Infobae: Ramelli ante la Comisión Primera</a></li>
+    <li><a href="https://ifmnoticias.com/analisis-ifm/analisis-jep-presupuesto-autonomia-judicial-y-el-debate-sobre-el-futuro-de-una-jurisdiccion-excepcional-con-bajos-resultados/" target="_blank" rel="noopener">IFM Noticias: costo acumulado estimado</a></li>
+    <li><a href="https://telencuestas.com/censos-de-poblacion/colombia/2026" target="_blank" rel="noopener">Proyección de población DANE 2026</a></li>
+  </ol>
+</section>
+
+<footer>
+  Hecho por Vibras Positivas HM, Caucasia, Antioquia. Cifras con corte al <span id="corte">22 de septiembre de 2026</span> (hora de Colombia). Los cálculos son promedios simples hechos con cifras públicas.
+</footer>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+  var fmt = new Intl.NumberFormat('es-CO',{maximumFractionDigits:0});
+  var money = function(n){ return '$' + fmt.format(Math.round(n)); };
+  var millions = function(m){ // m in millones
+    if (m >= 1000000) return '$' + (m/1000000).toLocaleString('es-CO',{maximumFractionDigits:2}) + ' billones';
+    if (m >= 1000) return '$' + fmt.format(Math.round(m)) + ' millones';
+    return '$' + (m).toLocaleString('es-CO',{maximumFractionDigits:1}) + ' millones';
+  };
+
+  // Receipt
+  var BUDGET_2026 = 744659e6, POP = 53399171, ADULTS = 39236663;
+  var perCap = BUDGET_2026/POP, perAdult = BUDGET_2026/ADULTS, hh = 4;
+  document.getElementById('perCap').textContent = money(perCap);
+  document.getElementById('perAdult').textContent = money(perAdult);
+  function drawHH(){
+    document.getElementById('hh').textContent = hh;
+    document.getElementById('hhTotal').textContent = money(perCap*hh);
+  }
+  document.getElementById('minus').onclick = function(){ if(hh>1){hh--;drawHH();} };
+  document.getElementById('plus').onclick = function(){ if(hh<20){hh++;drawHH();} };
+  drawHH();
+  document.getElementById('stamp').classList.add('in');
+
+  // Calculator
+  function calc(){
+    var m = +document.querySelector('input[name=m]:checked').value; // millones
+    var o = +document.querySelector('input[name=o]:checked').value;
+    var each = m/o; // millones
+    document.getElementById('res').textContent = millions(each);
+    document.getElementById('resTxt').textContent = millions(m) + ' entre ' + fmt.format(o) + (o>10?' decisiones.':' sentencias.');
+    var casas = each*1e6/ (perCap*hh);
+    document.getElementById('resEq').textContent = 'Es lo que aportan ' + fmt.format(casas) + ' hogares como el tuyo en todo un año.';
+  }
+  document.querySelectorAll('input[name=m],input[name=o]').forEach(function(i){ i.addEventListener('change',calc); });
+  calc();
+
+  // Chart
+  var data = [
+    {y:'2022',v:374898},{y:'2023',v:558212},{y:'2024',v:690092},
+    {y:'2025',v:777069},{y:'2026',v:744659},
+    {y:'2027',v:947642,k:'req',t:'pidió'},{y:'2027',v:821803,k:'proj',t:'proyecto'}
+  ];
+  var max = 947642, chart = document.getElementById('chart');
+  data.forEach(function(d){
+    var pct = d.v/max*100;
+    var row = document.createElement('div'); row.className='bar';
+    var label = '$' + fmt.format(d.v) + ' M' + (d.t?' ('+d.t+')':'');
+    row.innerHTML = '<span class="y">'+d.y+'</span><div class="track"><div class="fill '+(d.k||'')+'" style="width:'+pct+'%"></div><span class="v'+(d.k==='req'?' out':'')+'">'+label+'</span></div>';
+    chart.appendChild(row);
+  });
+
+  // Petition
+  var pet = [
+    'Señores',
+    'JURISDICCIÓN ESPECIAL PARA LA PAZ (JEP)',
+    'Presidencia y Secretaría Ejecutiva',
+    'Bogotá D.C.',
+    '',
+    'Referencia: Derecho de petición de información (art. 23 C.P. y Ley 1755 de 2015)',
+    '',
+    'Yo, [NOMBRE COMPLETO], identificado(a) con C.C. [NÚMERO], residente en [MUNICIPIO], en ejercicio del derecho fundamental de petición, solicito de manera respetuosa la siguiente información:',
+    '',
+    '1. Presupuesto asignado y ejecutado por la JEP en cada vigencia desde 2018 hasta 2026, discriminado entre funcionamiento e inversión y entre Magistratura, Secretaría Ejecutiva y Unidad de Investigación y Acusación.',
+    '2. Número de sentencias condenatorias proferidas en macrocasos y número total de decisiones con efecto de sentencia, discriminadas por tipo (tutelas, amnistías, renuncias a la persecución penal y otras).',
+    '3. Número de funcionarios de planta y contratistas por año desde 2018, y valor total de la nómina y de los contratos de prestación de servicios en 2025 y 2026.',
+    '4. Política aplicada a funcionarios o contratistas que se retiran para participar en campañas políticas y luego se reincorporan, y casos presentados desde 2025.',
+    '5. Justificación detallada de la solicitud presupuestal para 2027 por $947.642 millones.',
+    '',
+    'Solicito que la respuesta se envíe dentro del término legal de quince (15) días hábiles al correo [CORREO ELECTRÓNICO].',
+    '',
+    'Atentamente,',
+    '',
+    '[NOMBRE COMPLETO]',
+    'C.C. [NÚMERO]',
+    'Teléfono: [TELÉFONO]'
+  ].join('\n');
+  var ta = document.getElementById('pet'); ta.value = pet;
+
+  var toast = document.getElementById('toast'), tt;
+  function say(msg){ toast.textContent=msg; toast.classList.add('show'); clearTimeout(tt); tt=setTimeout(function(){toast.classList.remove('show');},2200); }
+  function copy(text, ok){
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){say(ok);},function(){fallback(text,ok);});
+    } else fallback(text,ok);
+  }
+  function fallback(text, ok){
+    var t=document.createElement('textarea'); t.value=text; t.style.position='fixed'; t.style.opacity='0';
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand('copy'); say(ok);}catch(e){ say('Selecciona el texto y cópialo a mano'); }
+    document.body.removeChild(t);
+  }
+  document.getElementById('copyPet').onclick = function(){ copy(ta.value,'Petición copiada'); };
+  document.getElementById('copyLink').onclick = function(){ copy(location.href,'Enlace copiado'); };
+
+  function waText(){
+    return '¿Sabías que la JEP tiene un presupuesto de $744.659 millones en 2026? A cada colombiano le toca ' + money(perCap) +
+      '. Ha dictado 4 sentencias y de sus 3.618 decisiones, 1.851 son tutelas. Mira las cifras con fuentes y saca tus cuentas: ' + location.href;
+  }
+  var wa = document.getElementById('waBtn');
+  wa.href = 'https://wa.me/?text=' + encodeURIComponent(waText());
+})();
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function(){ navigator.serviceWorker.register('sw.js').catch(function(){}); });
+}
+</script>
+</body>
+</html>

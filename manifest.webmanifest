@@ -1,0 +1,16 @@
+{
+  "name": "Ojo al peso: la JEP en cifras",
+  "short_name": "Ojo al peso",
+  "description": "Cuánto cuesta la JEP, qué entrega y cuánto te toca a ti. Cifras con fuente.",
+  "lang": "es-CO",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F3F5F2",
+  "theme_color": "#16213E",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
